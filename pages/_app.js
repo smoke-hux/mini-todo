@@ -1,7 +1,15 @@
 import '../styles/globals.css'
+//some import
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+import { ToDoListProvider } from '@/context/ToDolistApp'
+const MyApp = ({ Component, pageProps }) => {
+  return (
+    <ToDoListProvider>
+      <div>
+        <Component {...pageProps} />// this will allow us to communicate with the contract
+      </div>
+    </ToDoListProvider>// here
+  )
 }
 
 export default MyApp
